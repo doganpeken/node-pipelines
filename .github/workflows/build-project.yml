@@ -39,6 +39,10 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
 
+      - name: Permission build.sh
+        run: chmod +x ./build.sh
+        working-directory: ./
+
       - name: Build docker image
         run: ./build.sh build-$GITHUB_RUN_NUMBER idi2019.azurecr.io
         working-directory: ./
