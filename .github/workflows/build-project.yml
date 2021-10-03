@@ -24,14 +24,14 @@ jobs:
         run: npm run build
         working-directory: ./frontend
 
+      - name: Copy from frontend to bff
+        run: COPY ./build ../bff/
+        working-directory: ./frontend
+
       - name: Install dependencies
         run: npm install
         working-directory: ./bff
 
       - name: Run the tests
         run: npm run test
-        working-directory: ./bff
-
-      - name: Run the webserver
-        run: node index
         working-directory: ./bff
