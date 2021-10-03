@@ -19,9 +19,6 @@ docker build -t node-app:$TAG .
 docker tag node-app:$TAG $REGISTRY/ssc-node-app:latest
 docker tag node-app:$TAG $REGISTRY/ssc-node-app:$TAG
 
-# 3. Docker run
-docker run node-app:$TAG $REGISTRY/ssc-node-app:latest
-
 # 3. Container pushen
-# docker push $REGISTRY/ssc-node-app:latest
-# docker push $REGISTRY/ssc-node-app:$TAG
+docker push $REGISTRY/ssc-node-app:latest
+docker push $REGISTRY/ssc-node-app:$TAG
