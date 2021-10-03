@@ -25,7 +25,7 @@ jobs:
         working-directory: ./frontend
 
       - name: Copy from frontend to bff
-        run: COPY ./build ../bff/
+        run: cp ./build ../bff/
         working-directory: ./frontend
 
       - name: Install dependencies
