@@ -32,6 +32,13 @@ jobs:
         run: npm run test
         working-directory: ./bff
 
+      - name: Login azure
+      - uses: azure/docker-login@v1
+        with:
+          login-server: idi2019.azurecr.io
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+
       - name: Build docker image
-        run: docker build -t build-$GITHUB_RUN_NUMBER .
+        run: ./build.sh build-$GITHUB_RUN_NUMBER idi2019.azurecr.io
         working-directory: ./

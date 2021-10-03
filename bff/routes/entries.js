@@ -1,11 +1,14 @@
 "use strict";
 
+require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
+const restAPI = process.env.REST_API;
+
 router.get("/", async (req, res) => {
-  const response = await axios.get("http://20.93.189.154/guestbook/entries");
+  const response = await axios.get(`${restAPI}/guestbook/entries`);
   res.send(response.data);
 });
 
@@ -17,10 +20,7 @@ router.post("/", async (req, res) => {
   }
   let now = new Date();
   entrie.created = now.toISOString();
-  const response = await axios.post(
-    "http://20.93.189.154/guestbook/entries",
-    entrie
-  );
+  const response = await axios.post(`${restAPI}/guestbook/entries`, entrie);
   res.status(response.status).send({ message: "OK" });
 });
 
