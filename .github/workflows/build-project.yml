@@ -36,7 +36,7 @@ jobs:
         uses: azure/docker-login@v1
         with:
           login-server: idi2019.azurecr.io
-          username: ${{ secrets.USERNAME }}
+          username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
 
       - name: Build docker image
