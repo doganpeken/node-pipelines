@@ -17,6 +17,7 @@ describe("/", () => {
   });
 
   afterAll((done) => {
+    server.close();
     done();
   });
 });
@@ -34,6 +35,7 @@ describe("/guestbook/entries", () => {
   });
 
   afterAll((done) => {
+    server.close();
     done();
   });
 });
