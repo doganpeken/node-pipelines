@@ -13,6 +13,7 @@ describe("/", () => {
     it("should return the frontend", async () => {
       const res = await request(server).get("/");
       expect(res.status).toBe(200);
+      done();
     });
   });
 });
@@ -26,6 +27,7 @@ describe("/guestbook/entries", () => {
     it("should return all entries", async () => {
       const res = await request(server).get("/");
       expect(res.status).toBe(200);
+      done();
     });
   });
 });
