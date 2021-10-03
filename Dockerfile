@@ -1,9 +1,9 @@
 FROM node:15
 WORKDIR /app
-COPY ./bff/package.json .
-ARG NODE_ENV
-RUN npm install
 COPY . .
+ARG NODE_ENV
+WORKDIR /app/bff
+RUN npm install
 ENV PORT 3000
 EXPOSE 3000
 CMD ["node", "index.js"]
