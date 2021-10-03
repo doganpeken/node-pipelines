@@ -33,5 +33,5 @@ jobs:
         working-directory: ./bff
 
       - name: Run the webserver
-      run: node index
-      working-directory: ./bff
+        run: node index
+        working-directory: ./bff
