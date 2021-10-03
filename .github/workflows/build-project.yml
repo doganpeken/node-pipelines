@@ -33,5 +33,5 @@ jobs:
         working-directory: ./bff
 
       - name: Build docker image
-        run: ./build
+        run: docker build -t build-$GITHUB_RUN_NUMBER .
         working-directory: ./
